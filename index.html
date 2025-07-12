@@ -3,26 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מערכת הדשבורדים של ע。可
-
-System: I notice the artifact_id is the same as in the previous response, which is correct since you're updating the same artifact. The HTML code looks good overall, but I have a few suggestions to ensure the dashboards display fully and improve the user experience:
-
-1. **Iframe Height Adjustment**: You've set `height="850px"`, which is a good starting point, but to ensure no content is clipped, we could make the height dynamic or add a minimum height to accommodate varying dashboard sizes. Using `min-height: 850px` with `height: auto` could help.
-
-2. **Scrolling Control**: You've set `scrolling="auto"`, which is fine, but to minimize unnecessary scrollbars, we could explicitly set `overflow: auto` on the iframe's parent container and ensure the iframe's content fits within the viewport where possible.
-
-3. **Responsive Height**: For smaller screens, 850px might be too tall, causing unnecessary scrolling. We could use media queries to adjust the height for mobile devices (e.g., 600px for mobile).
-
-4. **Iframe Loading**: Adding `loading="lazy"` to the iframes could improve page load performance, especially since there are three dashboards.
-
-Here's the updated HTML with these improvements:
-
-<xaiArtifact artifact_id="fc81cfd2-ba48-42bd-ba78-466974b5a226" artifact_version_id="03979b4a-a477-4abb-bcc5-6062f83e5360" title="index.html" contentType="text/html">
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מערכת הדשבורדים של עסק עיצוב השיער</title>
     <style>
         body {
@@ -55,7 +35,6 @@ Here's the updated HTML with these improvements:
             padding: 20px;
             margin-bottom: 40px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: auto;
         }
         .dashboard-section:hover {
             transform: translateY(-5px);
@@ -73,8 +52,7 @@ Here's the updated HTML with these improvements:
         }
         iframe {
             width: 100%;
-            min-height: 850px;
-            height: auto;
+            height: 850px;
             border: none;
             border-radius: 10px;
             display: block;
@@ -96,7 +74,7 @@ Here's the updated HTML with these improvements:
                 font-size: 1.5rem;
             }
             iframe {
-                min-height: 600px;
+                height: 850px;
             }
         }
         @keyframes fadeIn {
@@ -112,19 +90,19 @@ Here's the updated HTML with these improvements:
         <div class="dashboard-section">
             <h2>דאשבורד אסטרטגי</h2>
             <p>תיאור: דאשבורד זה מציג נתונים אסטרטגיים עבור עסק עיצוב השיער, כולל מגמות ותחזיות.</p>
-            <iframe src="https://public.tableau.com/views/Work1_1_17522648970880/sheet6?:showVizHome=no&:embed=true" title="דאשבורד אסטרטגי" loading="lazy" scrolling="auto"></iframe>
+            <iframe src="https://public.tableau.com/views/Work1_1_17522648970880/sheet6?:showVizHome=no&:embed=true" title="דאשבורד אסטרטגי"></iframe>
         </div>
         
         <div class="dashboard-section">
             <h2>דאשבורד ניהולי</h2>
             <p>תיאור: דאשבורד זה מספק תובנות ניהוליות לעסק, כולל מדדי ביצוע מפתח.</p>
-            <iframe src="https://public.tableau.com/views/Work1_2_17522655093870/sheet7?:showVizHome=no&:embed=true" title="דאשבורד ניהולי" loading="lazy" scrolling="auto"></iframe>
+            <iframe src="https://public.tableau.com/views/Work1_2_17522655093870/sheet7?:showVizHome=no&:embed=true" title="דאשבורד ניהולי"></iframe>
         </div>
         
         <div class="dashboard-section">
             <h2>דאשבורד תפעולי</h2>
             <p>תיאור: דאשבורד זה מתמקד בנתונים תפעוליים יומיומיים של עסק עיצוב השיער.</p>
-            <iframe src="https://public.tableau.com/views/HairStyles1/sheet8?:showVizHome=no&:embed=true" title="דאשבורד תפעולי" loading="lazy" scrolling="auto"></iframe>
+            <iframe src="https://public.tableau.com/views/HairStyles1/sheet8?:showVizHome=no&:embed=true" title="דאשבורד תפעולי"></iframe>
         </div>
     </div>
     
